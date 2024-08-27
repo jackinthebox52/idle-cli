@@ -7,7 +7,7 @@ import datetime
 
 def print_idle_info():
     python_version = sys.version.split()[0] 
-    # Get build date from sys.version (assuming format: "3.12.0 (main, Oct 12 2023, 11:35:34) [GCC 12.2.0]")
+   
     build_date_str = sys.version.split('(')[1].split(',')[1].strip()
     build_date = datetime.datetime.strptime(build_date_str, "%b %d %Y").strftime("%b %d %Y")
 
@@ -40,22 +40,20 @@ def main():
             interrupt_name = {
                 signal.SIGINT: "KeyboardInterrupt",
                 signal.SIGTSTP: "SuspensionInterrupt",
-                # Add more interrupts here if needed
             }.get(signum, f"Signal {signum}")
 
             console.write(f"\n{interrupt_name}\n")
             console.resetbuffer()
 
-            # Check for double KeyboardInterrupt
             if signum == signal.SIGINT:
                 nonlocal consecutive_interrupts
                 consecutive_interrupts += 1
                 if consecutive_interrupts >= 2:
                     raise KeyboardInterrupt("Exiting due to consecutive interrupts")
 
-        consecutive_interrupts = 0  # Track consecutive interrupts
+        consecutive_interrupts = 0
 
-        for sig in [signal.SIGINT, signal.SIGTSTP]:  # Add more signals here
+        for sig in [signal.SIGINT, signal.SIGTSTP]
             signal.signal(sig, handle_interrupt)
 
         try:
@@ -69,7 +67,7 @@ def main():
                         code_block = console.raw_input("... ")
                         more = console.push(code_block)
 
-                    consecutive_interrupts = 0  # Reset on successful execution
+                    consecutive_interrupts = 0 
 
                 except KeyboardInterrupt as e:
                     if str(e) == "Exiting due to consecutive interrupts":
