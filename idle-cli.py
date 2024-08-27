@@ -16,7 +16,7 @@ def print_idle_info():
     info_string = f"Python {python_version} ({sys.version_info.releaselevel}, {build_date}) [{compiler}] on {sys.platform}"
     print(info_string)
     print('Type "help", "copyright", "credits" or "license()" for more information. idle-cli.')
-    print('IDLE-CLE (GPL-3.0) by jackinthebox52: https://www.github.com/jackinthebox52/idle-cli')
+    #print('IDLE-CLE (GPL-3.0) by jackinthebox52: https://www.github.com/jackinthebox52/idle-cli')
 
 
 def main():
