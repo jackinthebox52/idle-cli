@@ -53,7 +53,7 @@ def main():
 
         consecutive_interrupts = 0
 
-        for sig in [signal.SIGINT, signal.SIGTSTP]
+        for sig in [signal.SIGINT, signal.SIGTSTP]:
             signal.signal(sig, handle_interrupt)
 
         try:
