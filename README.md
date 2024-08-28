@@ -1,6 +1,6 @@
 ## About
 
-This is a simple 'clone' of the 'IDLE' Python interpreter GUI as a terminal application for Linux, specifially the code execution, visualization, and automatic saving of the session to a file.
+This is a simple 'clone' of the IDLE Python interpreter GUI as a terminal application for Linux, specifially the code execution, visualization, and automatic saving of the session to a file.
 Great for use in homework assignments.
 
 ## Installation
